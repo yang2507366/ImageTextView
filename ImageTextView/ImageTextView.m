@@ -23,7 +23,11 @@
     
     self.imageScrollView = [[[UIScrollView alloc] initWithFrame:self.bounds] autorelease];
     self.imageScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.imageScrollView.userInteractionEnabled = NO;
     [self addSubview:self.imageScrollView];
+    [super setClearsOnInsertion:YES];
+    
+    [super setDelegate:self];
     
     return self;
 }
@@ -33,15 +37,18 @@
     NSMutableString *blanks = [NSMutableString string];
     NSInteger numOfBlanks = (self.font.lineHeight + 2) / 4;
     for(NSInteger i = 0; i < numOfBlanks; ++i){
-        [blanks appendString:@" "];
+        [blanks appendString:@"\t"];
     }
-    NSRange range = NSMakeRange(self.text.length, blanks.length);
     [self insertText:blanks];
+    CGPoint caretPoint = [self caretRectForPosition:self.selectedTextRange.start].origin;
+    NSLog(@"%f, %f", caretPoint.x, caretPoint.y);
+    UIImageView *imgView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"01"]] autorelease];
+    imgView.frame = CGRectMake(caretPoint.x - [blanks sizeWithFont:self.font].width + 2, caretPoint.y, self.font.lineHeight, self.font.lineHeight);
+    [self.imageScrollView addSubview:imgView];
 }
 
 - (void)setDelegate:(id<UITextViewDelegate>)delegate
 {
-    [super setDelegate:self];
     self.customDelegate = delegate;
 }
 
@@ -78,6 +85,7 @@
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
+    NSLog(@"%d, %d", range.location, range.length);
     if([self.customDelegate respondsToSelector:@selector(textView:shouldChangeTextInRange:replacementText:)]){
         return [self.customDelegate textView:textView shouldChangeTextInRange:range replacementText:text];
     }
@@ -89,6 +97,7 @@
     if([self.customDelegate respondsToSelector:@selector(textViewDidChange:)]){
         [self.customDelegate textViewDidChange:textView];
     }
+    self.imageScrollView.contentSize = self.contentSize;
 }
 
 - (void)textViewDidChangeSelection:(UITextView *)textView

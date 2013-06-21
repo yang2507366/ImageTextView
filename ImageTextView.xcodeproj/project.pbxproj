@@ -17,6 +17,8 @@
 		3E0866A517732A2C00C048FF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E0866A417732A2C00C048FF /* Default@2x.png */; };
 		3E0866A717732A2C00C048FF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E0866A617732A2C00C048FF /* Default-568h@2x.png */; };
 		3E0866AF17732A3D00C048FF /* ImageTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0866AE17732A3D00C048FF /* ImageTextView.m */; };
+		3EE2C8D31773FEB5005CD41A /* 01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2C8D21773FEB5005CD41A /* 01.png */; };
+		3EE2C8D617744671005CD41A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE2C8D517744671005CD41A /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		3E0866A617732A2C00C048FF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3E0866AD17732A3D00C048FF /* ImageTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTextView.h; sourceTree = "<group>"; };
 		3E0866AE17732A3D00C048FF /* ImageTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTextView.m; sourceTree = "<group>"; };
+		3EE2C8D21773FEB5005CD41A /* 01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01.png; sourceTree = "<group>"; };
+		3EE2C8D517744671005CD41A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EE2C8D617744671005CD41A /* MessageUI.framework in Frameworks */,
 				3E08669117732A2B00C048FF /* UIKit.framework in Frameworks */,
 				3E08669317732A2B00C048FF /* Foundation.framework in Frameworks */,
 				3E08669517732A2B00C048FF /* CoreGraphics.framework in Frameworks */,
@@ -54,6 +59,7 @@
 		3E08668417732A2B00C048FF = {
 			isa = PBXGroup;
 			children = (
+				3EE2C8D517744671005CD41A /* MessageUI.framework */,
 				3E08669617732A2B00C048FF /* ImageTextView */,
 				3E08668F17732A2B00C048FF /* Frameworks */,
 				3E08668E17732A2B00C048FF /* Products */,
@@ -81,6 +87,7 @@
 		3E08669617732A2B00C048FF /* ImageTextView */ = {
 			isa = PBXGroup;
 			children = (
+				3EE2C8D21773FEB5005CD41A /* 01.png */,
 				3E08669F17732A2C00C048FF /* AppDelegate.h */,
 				3E0866A017732A2C00C048FF /* AppDelegate.m */,
 				3E08669717732A2B00C048FF /* Supporting Files */,
@@ -159,6 +166,7 @@
 				3E0866A317732A2C00C048FF /* Default.png in Resources */,
 				3E0866A517732A2C00C048FF /* Default@2x.png in Resources */,
 				3E0866A717732A2C00C048FF /* Default-568h@2x.png in Resources */,
+				3EE2C8D31773FEB5005CD41A /* 01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +294,7 @@
 				3E0866AC17732A2C00C048FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
